@@ -8,7 +8,21 @@
 
 int main(void)
 {
-    // Your code here
+  int x = 100;
 
-    return 0;
+  int rc = fork();
+
+  if (rc == 0)
+  {
+    printf("child value of x before: %d\n", x);
+    x = 5;
+    printf("child value of x after: %d\n", x);
+  }
+  else
+  {
+    printf("parent value of x before: %d\n", x);
+    x = 8;
+    printf("parent value of x after: %d\n", x);
+  }
+  return 0;
 }
