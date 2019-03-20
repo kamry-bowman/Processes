@@ -22,7 +22,8 @@ int main(void)
     myargs[0] = "/bin/ls";
     myargs[1] = "-l";
     myargs[2] = NULL;
-    execvp(myargs[0], myargs);
+    // execvp(myargs[0], myargs);
+    execlp("ls", myargs[0], myargs[1], NULL);
   }
   else
   {
